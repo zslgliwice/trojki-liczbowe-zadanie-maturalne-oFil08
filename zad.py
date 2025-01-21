@@ -5,7 +5,8 @@ def zad1():
             arr = line.split(" ")
             if sum(map(int,list(arr[0]+arr[1]))) == int(arr[2]):
                 answer.append(line)
-        return " ".join(answer)
+    file.close()
+    return " ".join(answer)
 
 def isPrime(n):
     if n < 2:
@@ -23,7 +24,8 @@ def zad2():
             a, b = int(arr[0]), int(arr[1])
             if isPrime(a) and isPrime(b) and a*b == int(arr[2]):
                 answer.append(line)
-        return " ".join(answer)
+    file.close()
+    return " ".join(answer)
 
 def isRightTriangleWorthy(line):
     arr = list(map(int,line.split(" ")))
@@ -40,8 +42,8 @@ def zad3():
                 line2 = file.readline()
                 if isRightTriangleWorthy(line2):
                     answer.append(" ".join([line,line2]) + "\n")
-
-        return " ".join(map(str,answer))
+    file.close()
+    return " ".join(map(str,answer))
 
 def isTriangleWorthy(line):
     arr = list(map(int,line.split(" ")))
@@ -62,6 +64,7 @@ def zad4():
                 longestCombo = max(longestCombo,combo)
             else:
                 combo = 0
+    file.close()
     return answer, longestCombo
 
 print(zad1())
